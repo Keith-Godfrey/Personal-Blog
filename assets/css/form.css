@@ -1,8 +1,25 @@
-body {
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header {
-
+input, textarea, form button {
+    width: 100%;
 }
 
+label {
+    text-align: left;
+    font-size: 16px;
+}
+
+.card div h3 {
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+form button {
+    color: white;
+    background-color: black;
+    margin-bottom: 30px;
+}

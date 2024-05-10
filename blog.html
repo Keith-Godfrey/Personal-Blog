@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/blog.css">
     <title></Blog-Entries></title>
 </head>
 <body>
-    
+ <header class="main-header">
+        <button onclick="myFunction()">Toggle dark mode</button>
+    </header>
+
+    <main>
+        <section>
+            <div class="work-container">
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <script>
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+    </script>   
 </body>
 </html>

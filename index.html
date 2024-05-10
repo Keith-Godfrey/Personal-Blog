@@ -1,24 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css"/>
-    <title></My-First-Blog></title>
-</head>
-<body>
-    <header class="main-header">
-        <h1>My First Blog</h1>
-        <button onclick="myFunction()">Toggle dark mode</button>
-        <script>
-        function myFunction() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
-            }
-            </script>
 
-    </header>
-    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="stylesheet" href="./assets/css/form.css">
+  <title></My-First-Blog></title>
+</head>
+
+<body>
+  <header class="main-header">
+    <button id="darkToggle">☀️</h1>
+  </header>
+
+  <main>
+    <section class="card-left">
+      <div>
+        <h2>My First Blog</h2>
+      </div>
+    </section>
+    <section class="card">
+      <div>
+        <h3>What's on your mind?</h3>
+        <form>
+          <label for="Username">Username:</label><br>
+          <input type="text" id="Username" name="Username"><br>
+          <label for="Title">Title:</label><br>
+          <input type="text" id="Title" name="Title">
+          <label for="Content">Content:</label><br>
+          <textarea name="Content" id="Content"></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+
+<script src="./assets/js/logic.js"></script>
+<script src="./assets/js/form.js"></script>
 
 </body>
+
 </html>
