@@ -58,4 +58,7 @@ main {
   display: flex;
 }
 
-
+.dark-mode {
+  background-color: black;
+  color: white;
+}
