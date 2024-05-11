@@ -1,9 +1,8 @@
 const themeBtn = document.querySelectorAll("#theme");
 const closeButton = document.querySelector("#back");
-const body = document.querySelector("body");
+
 let mode = "light";
 
-// light/dark mode
 themeBtn.forEach((btn) => {
   btn.addEventListener("click", function () {
     if (mode === "dark") {
@@ -16,7 +15,9 @@ themeBtn.forEach((btn) => {
   });
 });
 
-closeButton.addEventListener("click", function (event) {
+const backBtn = document.getElementById('back');
+if (backBtn) {
+backButton.addEventListener("click", function (event) {
   event.preventDefault();
   window.location.href = "index.html";
-});
+})}

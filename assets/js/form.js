@@ -1,56 +1,34 @@
-const themeBtn = document.querySelectorAll("#theme");
-const body = document.querySelector("body");
-let mode = "light";
+//Creating variables based on the id's used in the form html
+const userNameInput = document.querySelector("#username");
+const titleInput = document.querySelector("#title");
+const contentInput = document.querySelector("#content");
+const submitPost = document.querySelector("#submit");
 
-themeBtn.forEach((btn) => {
-    btn.addEventListener("click", function () {
-        if (mode === "dark") {
-    mode = "light";
-    body.setAttribute("id", "light");
-    } else {
-    mode = "dark";
-    body.setAttribute("id", "dark");
-    }
-    });
+//Add event listener to perform a task when the submit button is clicked
+submitPost.addEventListener("click", function (event) {
+  console.log("click");
+  event.preventDefault();
+
+  const entries = JSON.parse(localStorage.getItem("posts")) || [];
+
+  //grabs the user data and links the value to each corresponding key
+  const post = {
+    username: userNameInput.value.trim(),
+    title: titleInput.value,
+    content: contentInput.value,
+  };
+
+  console.log(post); // logs the data from the post object
+  entries.push(post); //pushes the user data from post into the entries array
+  localStorage.setItem("posts", JSON.stringify(entries));
+  window.location.href = "blog.html"; //Clicking the submit button takes you to the second html page
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const submitButton = document.querySelector("#submission");
-    const author = document.querySelector("#Username");
-    const title = document.querySelector("#Title");
-    const content = document.querySelector("#Content");
-
-    const getData = localStorage.getItem("blogData");
-    let blogEntries = [];
-
-    if (getData) {
-    blogEntries = JSON.parse(getData);
-    }
-
-    submitButton.addEventListener("click", function (event) {
-    event.preventDefault();
-    submitButton.addEventListener("click", function (event) {
-    event.preventDefault();
-        console.log("Form submitted");
-        console.log(author.value, title.value, content.value);
-    if (author.value && title.value && content.value) {
-        const blogData = {
-        Author: author.value.trim(),
-        Title: title.value.trim(),
-        Content: content.value.trim(),
-        };
-        console.log("Blog data to be stored:", blogData);
-        blogEntries.push(blogData);
-        localStorage.setItem("blogData", JSON.stringify(blogEntries));
-        
-        showAllBlogs();
-    } else {
-        alert("Please enter all fields");
-    }   
-  });
-
-
-function showAllBlogs() {
-  window.location.href = "blog.html";}
-});
-});
+//Tried to write a function that would send an alert if the form feilds are left empty but it does not work
+function validateForm() {
+  if (userNameInput === "" || titleInput === "" || contentInput === "") {
+    alert("Please fill out the form completely!");
+    return false;
+  }
+  return true;
+}

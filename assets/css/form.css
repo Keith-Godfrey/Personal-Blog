@@ -23,3 +23,7 @@ form button {
     background-color: black;
     margin-bottom: 30px;
 }
+
+#theme-switcher {
+    float: right;
+}

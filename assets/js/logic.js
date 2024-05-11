@@ -1,49 +1,14 @@
-// light/dark mode here
-// back button action
-// local storage
+// Access toggle switch HTML element
 
-function myFunction() {
-  var element = document.body;
-  element.classList.toggle("dark-mode");
+const themeSwitcher = document.querySelector('#theme-switcher');
+//Access body element from HTML files
+const body = document.querySelector('body');
+
+//Function to switch the body attributes from light to dark
+
+function toggleDarkMode() {
+  body.classList.toggle("dark");
 }
+//add Event listener so that the theme switch happens when the toggle button if clicked
 
-document.addEventListener("DOMContentLoaded", function() {
-  const blogContainer = document.querySelector(".blog-container");
-
-  blogContainer.innerHTML = "";
-
-  const getData = localStorage.getItem("blogData");
-  let blogEntries = [];
-
-  if (getData) {
-    blogEntries = JSON.parse(getData);
-  }
-
-  blogEntries.forEach(blogData => {
-    const blogPost = document.createElement("div");
-    blogPost.classList.add("blog-post");
-
-    const title = document.createElement("div");
-    title.classList.add("blog-title");
-    title.textContent = `Title: ${blogData.Title}`;
-
-    const content = document.createElement("div");
-    content.classList.add("blog-content");
-    content.textContent = `Content: ${blogData.Content}`;
-
-    const author = document.createElement("div");
-    author.classList.add("blog-author");
-    author.textContent = `Author: ${blogData.Author}`;
-  
-
-    blogPost.appendChild(title);
-    blogPost.appendChild(content);
-    blogPost.appendChild(author);
-
-    blogContainer.appendChild(blogPost);
-  });
-  
-    function showAllBlogs() {
-    window.onload = displayAllBlogs;
-    }
-});
+themeSwitcher.addEventListener('click', toggleDarkMode);
