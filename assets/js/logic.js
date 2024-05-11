@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const author = document.createElement("div");
     author.classList.add("blog-author");
     author.textContent = `Author: ${blogData.Author}`;
+  
 
     blogPost.appendChild(title);
     blogPost.appendChild(content);
@@ -41,7 +42,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     blogContainer.appendChild(blogPost);
   });
-
-  function showAllBlogs() {
-  window.onload = displayAllBlogs;
-  }
+  
+    function showAllBlogs() {
+    window.onload = displayAllBlogs;
+    }
+});
