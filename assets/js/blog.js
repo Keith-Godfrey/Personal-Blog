@@ -3,6 +3,7 @@ const closeButton = document.querySelector("#back");
 const body = document.querySelector("body");
 let mode = "light";
 
+// light/dark mode
 themeBtn.forEach((btn) => {
   btn.addEventListener("click", function () {
     if (mode === "dark") {

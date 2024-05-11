@@ -9,9 +9,14 @@
   <title></My-First-Blog></title>
 </head>
 
-<body>
+<body id="light">
+
   <header class="main-header">
-    <button onclick="myFunction()">☀️</h1></button>
+    <h1>My First Blog</h1>
+    <nav>
+      <button onclick="myFunction()">☀️</h1></button>
+
+    </nav>
   </header>
 
   <main>
@@ -26,20 +31,23 @@
         <form>
           <label for="Username">Username:</label><br>
           <input type="text" id="Username" name="Username"><br>
+          
           <label for="Title">Title:</label><br>
           <input type="text" id="Title" name="Title">
+         
           <label for="Content">Content:</label><br>
           <textarea name="Content" id="Content"></textarea>
+          
           <button type="submit">Submit</button>
         </form>
       </div>
     </section>
 
   </main>
-  
 
-<script src="./assets/js/logic.js"></script>
-<script src="./assets/js/form.js"></script>
+
+  <script src="./assets/js/logic.js"></script>
+  <script src="./assets/js/form.js"></script>
 
 </body>
 

@@ -36,14 +36,18 @@ a {
 
 .blog-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     flex-direction: column;
     border: 1px black solid;
     align-items: start;
     margin-top: 20px;
+    height: 20%;
 }
 
 .blog-post {
     width: 50%;
+   
     border: 2px solid #ccc;
     border-radius: 5px;
     padding: 10px;
@@ -68,17 +72,20 @@ a:hover {
     color: black;
 }
 
-.back {
+.fa {
     background-color: black;
     color: white;
-    font-size: 15px;
-    width: 50px;
-    line-height: .5vh;
-    justify-content: center;
+    width: 24px;
+    padding: 2px;
+    
+    justify-content: right;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 
 }
 
-.dark-mode {
+.dark {
     background-color: black;
     color: white;
 }
