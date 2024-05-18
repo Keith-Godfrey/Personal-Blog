@@ -2,20 +2,30 @@
 const userNameInput = document.querySelector("#username");
 const titleInput = document.querySelector("#title");
 const contentInput = document.querySelector("#content");
-const submitPost = document.querySelector("#submit");
+const submitPost = document.querySelector("form");
 
 //Add event listener to perform a task when the submit button is clicked
-submitPost.addEventListener("click", function (event) {
-  console.log("click");
-  event.preventDefault();
+submitPost.addEventListener("submit", function (event) {
+    event.preventDefault();
 
+  
+    const username=userNameInput.value.trim()
+    const title=titleInput.value.trim()
+    const content=contentInput.value.trim()
+
+  if(!username ||!title || !content) { 
+    document.querySelector('#error').textContent='please fill out the whole form'
+    setTimeout(() => {
+      document.querySelector('#error').textContent=''  
+    }, 3000);
+    return;
+  }
   const entries = JSON.parse(localStorage.getItem("posts")) || [];
-
   //grabs the user data and links the value to each corresponding key
   const post = {
-    username: userNameInput.value.trim(),
-    title: titleInput.value,
-    content: contentInput.value,
+    username, 
+    title, 
+    content, 
   };
 
   console.log(post); // logs the data from the post object
@@ -23,12 +33,3 @@ submitPost.addEventListener("click", function (event) {
   localStorage.setItem("posts", JSON.stringify(entries));
   window.location.href = "blog.html"; //Clicking the submit button takes you to the second html page
 });
-
-//Tried to write a function that would send an alert if the form feilds are left empty but it does not work
-function validateForm() {
-  if (userNameInput === "" || titleInput === "" || contentInput === "") {
-    alert("Please fill out the form completely!");
-    return false;
-  }
-  return true;
-}

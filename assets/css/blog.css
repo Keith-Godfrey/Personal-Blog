@@ -23,7 +23,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end
-  }
+}
 
 #backBtn {
     font-size: 25px;
